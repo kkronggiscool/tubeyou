@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload - TubeYou</title>
+  <link rel="stylesheet" href="/bootstrap.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+    .header {
+      background-color: gray;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .header a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .upload {
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-left: 20px;
+    }
+    .upload:hover {
+      color: #b3b3b3;
+    }
+    .form-container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="/">TubeYou</a>
+    <a href="#" class="upload">Upload</a>
+  </div>
+
+  <div class="container text-center form-container">
+    <h1>Video Upload</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="videoname">Video Title (max 50 characters):</label>
+        <input type="text" id="videoname" name="videoname" maxlength="50" required>
+      </div>
+      <div class="form-group">
+        <label for="video">Video File (MP3, MOV, MP4, max 15MB):</label>
+        <input type="file" id="video" name="video" required>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Upload</button>
+    </form>
+  </div>
+</body>
+</html>

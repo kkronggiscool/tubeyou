@@ -1,0 +1,71 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeYou</title>
+  <link rel="stylesheet" href="/bootstrap.css">
+  <style>
+    /* Applying custom font and styling */
+    body {
+      background-color: black;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+    }
+
+    h1 {
+      font-family: 'Roboto', sans-serif;  /* Ensuring Roboto is used */
+      font-weight: bold;                  /* Bold text */
+      font-size: 16px;                    /* Way smaller font */
+    }
+
+    /* Header styling */
+    .header {
+      background-color: gray;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Styling for the TubeYou link */
+    .header a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    /* Styling for the Upload link */
+    .upload {
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;  /* Smaller size for upload */
+      margin-left: 20px;
+    }
+
+    /* Hover effect for the Upload link */
+    .upload:hover {
+      color: #b3b3b3;  /* Slightly darker shade when hovered */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <a href="/">TubeYou</a>
+    <a href="/upload" class="upload">Upload</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container text-center mt-5">
+    <h1>Welcome dear user! Here are some videos, sorted by newest!</h1>
+    <ul>
+      <% videos.forEach(video => { %>
+        <li><a href="/video?w=<%= video.id %>"><%= video.videoname %></a></li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>

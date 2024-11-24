@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch - <%= video.videoname %></title>
+  <link rel="stylesheet" href="/bootstrap.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+    .header {
+      background-color: gray;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .header a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .upload {
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-left: 20px;
+    }
+    .upload:hover {
+      color: #b3b3b3;
+    }
+    .form-container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="/">TubeYou</a>
+    <a href="/upload" class="upload">Upload</a>
+  </div>
+
+  <div class="container text-center">
+    <h1><%= video.videoname %></h1>
+    <video controls>
+      <source src="data:video/mp4;base64,<%= video.videofile.toString('base64') %>" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</body>
+</html>
